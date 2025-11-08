@@ -1,0 +1,17 @@
+<app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
+<app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
+<app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
+<app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
+<app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
+<app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
+
+
+<div class="chances">Chances left: {{ chanceLeft() }}</div>
+<div *ngIf="chanceLeft() === 0">Game Over! The word was: {{ randomWord }}
+<button (click)="resetGame()">Try again</button>
+</div>  
+
+<div *ngIf="gameWon" class="game-won">
+  You Won! The word was: <strong>{{ randomWord }}</strong><br />
+  <button (click)="resetGame()">Play Again</button>
+</div>

@@ -1,0 +1,9 @@
+<div class="guess">   
+<input type="text" name="" id="" class="letter" maxlength="1" [(ngModel)]="letterOne" [ngClass]="submitted ? checkLetter(letterOne,0) : 'gray'" [disabled]="submitted||!chanceService.gameActive()">
+<input type="text" name="" id="" class="letter" maxlength="1" [(ngModel)]="letterTwo" [ngClass]="submitted ? checkLetter(letterTwo,1) : 'gray'" [disabled]="submitted||!chanceService.gameActive()">
+<input type="text" name="" id="" class="letter" maxlength="1" [(ngModel)]="letterThree" [ngClass]="submitted ? checkLetter(letterThree,2) : 'gray'" [disabled]="submitted||!chanceService.gameActive()">
+<input type="text" name="" id="" class="letter" maxlength="1" [(ngModel)]="letterFour" [ngClass]="submitted ? checkLetter(letterFour,3) : 'gray'" [disabled]="submitted||!chanceService.gameActive()">
+<input type="text" name="" id="" class="letter" maxlength="1" [(ngModel)]="letterFive" [ngClass]="submitted ? checkLetter(letterFive,4) : 'gray'" [disabled]="submitted||!chanceService.gameActive()">
+<button (click)="onsubmitGuess()" [disabled]="submitted||!chanceService.gameActive()">submit</button>
+</div>
+
