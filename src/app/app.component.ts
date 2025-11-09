@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { GuessComponent } from "./guess/guess.component";
 import { ChanceService } from './chance.service';
 import { CommonModule } from '@angular/common';
+
 declare const words: string[];
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, GuessComponent,CommonModule],
+  imports: [RouterOutlet, GuessComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

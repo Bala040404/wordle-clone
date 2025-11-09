@@ -4,10 +4,11 @@ import { NgClass } from '@angular/common';
 import { ChanceService } from '../chance.service';
 import { ToastrService } from 'ngx-toastr';
 import { AlphaonlyDirective } from '../alphaonly.directive';
+import { SingleCharInputDirective } from '../single-char-input.directive';
 declare const words: string[];
 @Component({
   selector: 'app-guess',
-  imports: [FormsModule, NgClass,AlphaonlyDirective],
+  imports: [FormsModule, NgClass,AlphaonlyDirective,SingleCharInputDirective],
   templateUrl: './guess.component.html',
   styleUrl: './guess.component.scss'
 })
@@ -59,10 +60,19 @@ export class GuessComponent {
   
 
   onsubmitGuess(){
+      
+      this.letterOne = this.letterOne.toLowerCase();
+      this.letterTwo = this.letterTwo.toLowerCase();
+      this.letterThree = this.letterThree.toLowerCase();
+      this.letterFour = this.letterFour.toLowerCase();
+      this.letterFive = this.letterFive.toLowerCase();
+      
       this.guessWord = this.letterOne + this.letterTwo + this.letterThree + this.letterFour + this.letterFive;
-      this.guessWord = this.guessWord.toLowerCase();
+      
+      
+      this.guessWord = this.guessWord.toLowerCase(); 
       this.checkWord();
-    }
+  }
 
   checkWord(){
     if(this.allWords.includes(this.guessWord)){
