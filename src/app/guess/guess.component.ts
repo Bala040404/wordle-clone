@@ -98,6 +98,7 @@ export class GuessComponent {
         
         console.log(letter);
         console.log(this.guessMap);
+        console.log(this.guessMap[letter]);
         
   let guessList = [...this.guessMap[letter]]; 
       let answerList = this.answerMap[letter];
