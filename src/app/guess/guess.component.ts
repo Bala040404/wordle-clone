@@ -89,12 +89,15 @@ export class GuessComponent {
     if(this.submitted){
       const newCountMap: Record<string, number[]> = {};
 
-      console.log(this.guessMap);
+      
       console.log(this.answerMap);
       
       
       if(this.answerWord.includes(letter.toLowerCase())){
+        console.log("inside if block for letter present in answer");
+        
         console.log(letter);
+        console.log(this.guessMap);
         
   let guessList = [...this.guessMap[letter]]; 
       let answerList = this.answerMap[letter];
