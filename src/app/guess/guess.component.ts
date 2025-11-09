@@ -86,6 +86,7 @@ export class GuessComponent {
  
 
   checkLetter(letter:any,index:any){
+    letter = letter.toLowerCase()
     if(this.submitted){
       const newCountMap: Record<string, number[]> = {};
 
