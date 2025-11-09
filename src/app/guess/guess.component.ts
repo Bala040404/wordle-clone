@@ -5,6 +5,7 @@ import { ChanceService } from '../chance.service';
 import { ToastrService } from 'ngx-toastr';
 import { AlphaonlyDirective } from '../alphaonly.directive';
 import { SingleCharInputDirective } from '../single-char-input.directive';
+import { LetterTrackService } from '../letter-track.service';
 declare const words: string[];
 @Component({
   selector: 'app-guess',
@@ -15,6 +16,7 @@ declare const words: string[];
 export class GuessComponent {
   allWords = words;
   chanceService = inject(ChanceService)
+  letterTracker = inject(LetterTrackService)
   toastr = inject(ToastrService);
   @Input() answerWord:any = "";
    @Output() gameWon = new EventEmitter<void>();
@@ -77,6 +79,9 @@ export class GuessComponent {
   checkWord(){
     if(this.allWords.includes(this.guessWord)){
       this.submitted = true;
+      for(let l of this.guessWord){
+        this.letterTracker.addLetter(l);
+      }
       this.answerMap = this.getLetterFrequency(this.answerWord);
       this.guessMap = this.getLetterFrequency(this.guessWord)
 

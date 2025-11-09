@@ -3,11 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { GuessComponent } from "./guess/guess.component";
 import { ChanceService } from './chance.service';
 import { CommonModule } from '@angular/common';
+import { LetterTrackService } from './letter-track.service';
+import { UnusedAlphabetsComponent } from "./unused-alphabets/unused-alphabets.component";
 
 declare const words: string[];
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, GuessComponent, CommonModule],
+  imports: [RouterOutlet, GuessComponent, CommonModule, UnusedAlphabetsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -17,6 +19,7 @@ export class AppComponent {
   wordlist = words;
   gameWon = false;
   chanceLeft = computed(()=>  this.chanceService.getCount());
+  letterTracker = inject(LetterTrackService)
   
   
   randomIndex = Math.floor(Math.random() * words.length);
@@ -27,6 +30,8 @@ export class AppComponent {
     this.randomWord = words[this.randomIndex];
     this.chanceService.resetCount();
     this.gameWon = false;
+    this.letterTracker.clearArray()
+
   }
   onGameWon() {
     this.gameWon = true;

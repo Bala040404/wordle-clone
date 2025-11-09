@@ -1,1 +1,12 @@
-<p>unused-alphabets works!</p>
+<div class="alphabet-container">
+  
+  <div class="letter-grid">
+    <span *ngFor="let letter of unusedLetters()" class="letter unused">
+      {{ letter }}
+    </span>
+
+    <span *ngFor="let letter of usedLetters()" class="letter used">
+        {{letter}}
+        </span>
+  </div>
+</div>

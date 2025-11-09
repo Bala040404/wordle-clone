@@ -7,7 +7,7 @@
 <app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
 <app-guess [answerWord]="randomWord" (gameWon)="onGameWon()"></app-guess>
 
-
+<app-unused-alphabets></app-unused-alphabets>
 <div class="chances">Chances left: {{ chanceLeft() }}</div>
 <div *ngIf="chanceLeft() === 0">Game Over! The word was: {{ randomWord }}
 <button (click)="resetGame()">Try again</button>
