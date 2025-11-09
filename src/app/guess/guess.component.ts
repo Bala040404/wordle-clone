@@ -89,10 +89,20 @@ export class GuessComponent {
     if(this.submitted){
       const newCountMap: Record<string, number[]> = {};
 
+      console.log(this.guessMap);
+      console.log(this.answerMap);
+      
+      
       if(this.answerWord.includes(letter.toLowerCase())){
+        console.log(letter);
+        
   let guessList = [...this.guessMap[letter]]; 
       let answerList = this.answerMap[letter];
       const excessCount = guessList.length - answerList.length;
+      console.log(guessList);
+      console.log(answerList);
+      
+      
 
     if (excessCount > 0) {
         let removed = 0;
