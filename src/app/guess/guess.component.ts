@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { ChanceService } from '../chance.service';
 import { ToastrService } from 'ngx-toastr';
+import { AlphaonlyDirective } from '../alphaonly.directive';
 declare const words: string[];
 @Component({
   selector: 'app-guess',
-  imports: [FormsModule, NgClass],
+  imports: [FormsModule, NgClass,AlphaonlyDirective],
   templateUrl: './guess.component.html',
   styleUrl: './guess.component.scss'
 })

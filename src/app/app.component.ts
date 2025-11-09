@@ -12,7 +12,7 @@ declare const words: string[];
 })
 export class AppComponent {
   chanceService = inject(ChanceService);
-  title = 'wordle-clone';
+  title = '-clone';
   wordlist = words;
   gameWon = false;
   chanceLeft = computed(()=>  this.chanceService.getCount());
